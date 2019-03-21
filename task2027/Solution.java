@@ -20,13 +20,7 @@ public class Solution {
                 words) {
             System.out.println(w);
         }
-/*
-        String[] s = directions(crossword, 2, 1, 'n');
-        for (String st :
-                s) {
-            System.out.println(st);
-        }
-*/
+
         /*
 
 Ожидаемый результат
@@ -34,7 +28,7 @@ home - (5, 3) - (2, 0)
 same - (1, 1) - (4, 1)
          */
     }
-
+//create array of possible directions
     private static String[] directions(int[][] crossword, int x, int y, int secondChar) {
         StringBuilder resultBuilder = new StringBuilder();
         if (y > 0) {
@@ -78,6 +72,7 @@ same - (1, 1) - (4, 1)
                                 StringBuilder sb = new StringBuilder();
                                 sb.append((char) crossword[tempY][tempX]);
                                 while (!sb.toString().equals(word)) {
+                                    //switch can be moved out to another method
                                     switch (direction) {
                                         case "S": {
                                             tempY++;
@@ -125,7 +120,7 @@ same - (1, 1) - (4, 1)
 
                                 }
                                 if (sb.toString().equals(word)) {
-                                    found = true;
+                                    found = true; //prevents multiple additions of same word
                                     result.add(new Word(sb.toString()));
                                     result.get(result.size() - 1).setStartPoint(x, y);
                                     result.get(result.size() - 1).setEndPoint(tempX, tempY);
