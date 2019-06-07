@@ -29,8 +29,7 @@ public class Solution {
             sb.append(s).append(" ");
         }
         String string = sb.toString().trim();
-        String[] strings;
-        strings = string.replaceAll("\uFEFF", "").split("\\s+");
+        String[] strings = string.replaceAll("\uFEFF", "").split("\\s+");
         for (int i = 0; i < strings.length - 1; i++) {
             for (int j = i + 1; j < strings.length; j++) {
                 if (strings[i].trim().equals(new StringBuilder(strings[j].trim()).reverse().toString())) {
