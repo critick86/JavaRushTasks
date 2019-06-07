@@ -20,7 +20,6 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String fileString = reader.readLine();
         reader.close();
-        System.out.println(fileString);
         Path filePath = Paths.get(fileString);
         List<String> textLines = Files.readAllLines(filePath);
         StringBuilder sb = new StringBuilder();
